@@ -1,0 +1,4 @@
+#ignore conf and build direcotries
+conf/*
+build/*
+info/*
