@@ -1,0 +1,64 @@
+<resume>
+  <name>Li Zhong </name>
+  <info>
+    <gender>Male</gender>
+    <telephone>15902198964</telephone>
+    <email>phenicsl@gmail.com</email>
+    <experience>1.5 years</experience>
+  </info>
+  <academics>
+    <duration>
+      <from>2005</from>
+      <to>2008</to>
+      <degree>Master</degree>
+      <major>Computer Science</major>
+      <school>Xi'an Jiaotong University</school>
+    </duration>
+    <duration>
+      <from>2001</from>
+      <to>2005</to>
+      <degree>Bechelor</degree>
+      <major>Computer Science</major>
+      <school>Xi'an Jiaotong University</school>
+    </duration>
+  </academics>
+  <history>
+    <job>
+      <duration>
+	<from>2009.8</from>
+	<to>current</to>
+      </duration>
+      <company>EMC China</company>
+      <title>Software Engineer</title>
+      <projects>
+	<project>
+	  <name>
+	  Platypus Hardware Test Framework
+	  </name>
+	  <description>
+	    Hardware test framework for storage processor testing. Hardware test framework for storage processor testing. Hardware test framework for storage processor testing.
+	  </description>
+	  <taskset>
+	    <task>
+	      <title>
+		Zeorconf protocol implementation
+	    </title>
+	    <key-words>
+	      c, pthread, zeroconf
+	    </key-words>
+	    <description>
+	      Implement service register in communicaiton protocol.
+	    </description>
+	    </task>
+	  </taskset>
+	</project>
+      </projects>
+      </job>
+  </history>
+  
+  <skillarea>
+    <title></title>
+    <skllset>
+    </skllset>
+  </skillarea>
+</resume>

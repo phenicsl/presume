@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="fop resume" default="build" basedir=".">
+  <property environment="env"/>
+
+  <property name="fop.home" value="${env.FOP_HOME}"/>
+
+  <property name="dst.path" value="build"/>
+  <property name="conf.path" value="conf"/>
+  <property name="src.path" value="src"/>
+  <property name="font.path" value="${conf.path}/font"/>
+  <property name="metrics.path" value="${conf.path}/metrics"/>
+  
+  <property name="font.name" value=""/>
+  <property name="metrics.name" value=""/>
+  
+  <property name="xml.name" value="resume.xml"/>
+  <property name="fo.name" value="resume.fo"/>
+  <property name="pdf.name" value="resume.pdf"/>
+  <property name="xsl.name" value="resume.xsl"/>
+
+  <property name="resume.home" value="/home/phenics/workspace/doc/resume"/>
+
+  <fileset dir="${fop.home}" id="fop.libs">
+    <include name="lib/*.jar"/>
+    <include name="build/*.jar"/>
+  </fileset>
+
+  <path id="fop.classpath">
+    <fileset refid="fop.libs"/>
+  </path>
+
+  <target name="ttf-metrics" description="generate font config files">
+    <mkdir dir="${metrics.path}"/>
+    <java classname="org.apache.fop.fonts.apps.TTFReader">
+      <classpath>
+	<path refid="fop.classpath"/>
+      </classpath>
+      <arg value="${font.path}/${font.name}" />
+      <arg value="${metrics.path}/${metrics.name}" />
+    </java>
+  </target>
+  
+  <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop">
+    <classpath>
+      <path refid="fop.classpath"/>
+    </classpath>
+  </taskdef>
+
+  <target name="xslt" description="generate fo with xslt process">
+    <java classname="org.apache.xalan.xslt.Process">
+      <classpath>
+	<path refid="fop.classpath"/>
+      </classpath>
+      <arg line="-IN ${src.path}/${xml.name} -XSL ${src.path}/${xsl.name} -OUT ${src.path}/${fo.name}"/>
+    </java>
+  </target>
+
+  <target name="fop" depends="xslt" description="build the document">
+    <fop format="application/pdf"
+	 fofile="${src.path}/${fo.name}"
+	 outfile="${dst.path}/${pdf.name}"
+	 userconfig="conf/fop.xconf">
+    </fop>
+  </target>
+
+  <target name="view" description="view pdf file">
+    <exec executable="evince"
+	  spawn="true">
+      <arg value="${dst.path}/${pdf.name}"/>
+    </exec>
+  </target>
+</project>
