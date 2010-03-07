@@ -16,7 +16,9 @@
   <property name="xml.name" value="resume.xml"/>
   <property name="fo.name" value="resume.fo"/>
   <property name="pdf.name" value="resume.pdf"/>
-  <property name="xsl.name" value="resume.xsl"/>
+  <property name="html.name" value="resume.html"/>
+  <property name="xsl.fo.name" value="fo.xsl"/>
+  <property name="xsl.html.name" value="resume_html.xsl"/>
 
   <property name="resume.home" value="/home/phenics/workspace/doc/resume"/>
 
@@ -46,21 +48,30 @@
     </classpath>
   </taskdef>
 
-  <target name="xslt" description="generate fo with xslt process">
+  <target name="xslt_fo" description="generate fo with xslt process">
     <java classname="org.apache.xalan.xslt.Process">
       <classpath>
 	<path refid="fop.classpath"/>
       </classpath>
-      <arg line="-IN ${src.path}/${xml.name} -XSL ${src.path}/${xsl.name} -OUT ${src.path}/${fo.name}"/>
+      <arg line="-IN ${src.path}/${xml.name} -XSL ${src.path}/${xsl.fo.name} -OUT ${src.path}/${fo.name}"/>
     </java>
   </target>
 
-  <target name="fop" depends="xslt" description="build the document">
+  <target name="fop" depends="xslt_fo" description="build the document">
     <fop format="application/pdf"
 	 fofile="${src.path}/${fo.name}"
 	 outfile="${dst.path}/${pdf.name}"
 	 userconfig="conf/fop.xconf">
     </fop>
+  </target>
+
+  <target name="html" description="build html version">
+    <java classname="org.apache.xalan.xslt.Process">
+      <classpath>
+	<path refid="fop.classpath"/>
+      </classpath>
+      <arg line="-IN ${src.path}/${xml.name} -XSL ${src.path}/${xsl.html.name} -OUT ${dst.path}/${html.name}"/>
+    </java>
   </target>
 
   <target name="view" description="view pdf file">

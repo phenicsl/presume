@@ -1,64 +1,236 @@
 <resume>
   <name>Li Zhong </name>
-  <info>
+  <profile>
     <gender>Male</gender>
+    <birthday>Jun. 2, 1983</birthday>
     <telephone>15902198964</telephone>
     <email>phenicsl@gmail.com</email>
     <experience>1.5 years</experience>
-  </info>
-  <academics>
+  </profile>
+  <academy>
     <duration>
       <from>2005</from>
       <to>2008</to>
       <degree>Master</degree>
-      <major>Computer Science</major>
+      <major>System Architecture</major>
       <school>Xi'an Jiaotong University</school>
     </duration>
     <duration>
       <from>2001</from>
       <to>2005</to>
-      <degree>Bechelor</degree>
+      <degree>Bachelor</degree>
       <major>Computer Science</major>
       <school>Xi'an Jiaotong University</school>
     </duration>
-  </academics>
+  </academy>
   <history>
     <job>
       <duration>
-	<from>2009.8</from>
-	<to>current</to>
+	<from>Aug. 2008</from>
+	<to>Present</to>
       </duration>
-      <company>EMC China</company>
+      <organization>EMC China R&amp;D center</organization>
       <title>Software Engineer</title>
       <projects>
 	<project>
 	  <name>
-	  Platypus Hardware Test Framework
+	  Platypus Hardware Diagnostic Application
 	  </name>
 	  <description>
-	    Hardware test framework for storage processor testing. Hardware test framework for storage processor testing. Hardware test framework for storage processor testing.
+	    Initial member to start up the development of Platypus Diagnostic
+	    Application, which is the next generation diagnostic software for
+	    EMC storage platforms. Worked in following fields:
 	  </description>
 	  <taskset>
 	    <task>
 	      <title>
-		Zeorconf protocol implementation
-	    </title>
-	    <key-words>
-	      c, pthread, zeroconf
-	    </key-words>
-	    <description>
-	      Implement service register in communicaiton protocol.
-	    </description>
+		Zeroconf Service Discovery and File Transfer Implementation
+	      </title>	     
+	      <keywords>
+		C, Pthread, Zeroconf Protocol, Asynchronous Programming, Linux Socket Programming, Regular Expression
+	      </keywords>
+	      <responsibility>
+		<item>
+		  Took ownership to investigate Zeroconf protocol and share
+		  knowledge with team members. Designed Zeroconf service
+		  registration and discovery implementation proposal.
+		</item>
+		<item>
+		  Implemented Zeroconf service register for diagnostic service
+		  publication and service browser for service discovery. 
+		</item>
+		<item>
+		  C/S model socket programming on Linux system to implement file transfer protocol. 
+		</item>
+		<item>
+		  Used regular expression to parse file transfer request command and response.
+		</item>
+		<item>
+		  Pthread and asynchronous programming was used to support Zeroconf service discovery.
+		</item>
+	      </responsibility>
+	    </task>
+	    <task>
+	      <title>Atomic Tests Implementation</title> 
+	      <keywords>C++, Boost, libusb, SCSI, SATA</keywords>
+	      <responsibility>
+		<item>
+		  Implement atomic tests for discovered devices. It involved
+		  test logic implementation, physical device access and
+		  input/output operations.
+		</item>
+		<item>
+		  Investigated USB Mass Storage and SCSI protocol. 
+		  Implemented read/write, get_capacity operations.
+		</item>
+		<item>
+  		  Implemented SATA device atomic tests that provide SATA device read/write,
+		  display S.M.A.R.T, identify operations.
+		</item>
+		<item>
+		  Boost libraries was used to handle device information and input/output.
+		</item>
+	      </responsibility>
+	    </task>
+	    <task>
+	      <title>Construction Algorithm and Builder</title>
+	      <keywords>C/C++, Boost::Spirit, libxml++</keywords>
+	      <responsibility>
+		<item>
+		  Worked as maintainer for Construction &amp; Builder sub system.
+		</item>
+		<item>
+		  Maintain and improve construction algorithm which involves XML
+		  file parsing(libxml++), expression parsing(Boost::Spirit) and
+		  complex match algorithm.
+		</item>
+		<item>
+		  Worked as git sub system maintainer for code quality and
+		  version control process assurance.
+		</item>
+		<item>
+		  Implemented logger library that supports difference categories and levels.
+		</item>
+	      </responsibility>
 	    </task>
 	  </taskset>
 	</project>
       </projects>
-      </job>
+    </job>
+    <job>
+      <duration>
+	<from>Mar. 2006</from>
+	<to>Jul. 2008</to>
+      </duration>
+      <organization>NHPCC</organization>
+      <title>Master Student</title>
+      <projects>
+      <project>
+	<name>Prophet Speculative Multi-threading (SpMT) Technology</name>
+	<description>
+	  Key researcher in "Prophet" project, which focus on compiler
+	  and architecture technology for Thread-Level Speculation on multi-core
+	  processor. Worked in following tasks:
+	</description>
+	<taskset>
+	  <task>
+	    <title>Intermediate Instruction Virtual Machine for SpMT Architecture</title>
+	    <keywords>SpMT architecture, Virtual Machine, Interpreter</keywords>
+	    <responsibility>
+	      <item> 
+		Designed speculative execution model and SpMT architecture with
+		a new Cache structure to solve dependence violation.
+	      </item>
+	      <item> 
+		Crafted SpMT virtual machine to simulate SpMT architecture by
+		interpreting compiled intermediate instructions.
+	      </item>
+	    </responsibility>
+	  </task>	  
+	  <task>
+	    <title>Thread Partition Algorithm Research</title>
+	    <keywords>compiler infrastructure, data flow analysis, thread partition algorithm</keywords>
+	    <responsibility>
+	      <item>
+		Design and implement thread partition algorithm to explore
+		thread-level parallel of natural loops.
+	      </item>
+	      <item>
+		Data flow analysis programming experience based on SUIF compiler infrastructure.
+	      </item>
+	    </responsibility>
+	  </task>
+	</taskset>
+      </project>
+      </projects>
+    </job>
   </history>
   
-  <skillarea>
-    <title></title>
-    <skllset>
-    </skllset>
-  </skillarea>
+  <skillset>
+    <skill>
+      <title>Languages</title>
+      <description>
+	C/C++, Java, Python, Bash, XML, HTML, Elisp
+      </description>
+    </skill>
+    <skill>
+      <title>Tools</title>
+      <description>
+	GNU development tool set(GCC, Gmake, GDB), Emacs, Eclipse, Git, Mysql
+      </description>
+    </skill>
+    <skill>
+      <title>
+	Technology Skills
+      </title>
+      <description>
+	<item>
+	  Proficiency with C/C++ programming. Familiar with Java, Python.
+	</item>
+	<item>
+	  Solid knowledge on compiler principle, have knowledge about parser,
+	  interpreter implementation.
+	</item>
+	<item>
+	  Solid knowledge on Linux system usage. Familiar with Bash script
+	  programming. Advanced Pthread and multi-threading programming
+	  knowledge.
+	</item>
+	<item>
+	  Good knowledge about Object-oriented design, design pattern and UML.
+	</item>
+	<item>
+	  In depth experience with  Linux socket programming. Familiar with TCP/IP network protocol.
+	</item>	
+	<item>
+	  Good knowledge about markup languages. Familiar with HTML, XML, XSLT,
+	  XSL-FO. Have knowledge about CSS and Javascript.
+	</item>
+	<item>
+	  Some experiences with using Servlet, GWT, Spring and Hibernate. Have
+	  basic knowledge about dynamic web application development.
+	</item>
+	<item>
+	  Have experience with elisp programming for Emacs extension writting.
+	</item>
+      </description>
+    </skill>
+    <skill>
+      <title>English</title>
+      <description>
+	Fluent English
+      </description>
+    </skill>
+  </skillset>
+
+  <awards>
+    <award>
+      <time>
+	<year>2009</year>
+      </time>
+      <description>
+	"Bronze Medal of Recognition" award by EMC R &amp; D Center
+      </description>
+    </award>
+  </awards>
 </resume>
