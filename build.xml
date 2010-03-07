@@ -18,7 +18,7 @@
   <property name="pdf.name" value="resume.pdf"/>
   <property name="html.name" value="resume.html"/>
   <property name="xsl.fo.name" value="fo.xsl"/>
-  <property name="xsl.html.name" value="resume_html.xsl"/>
+  <property name="xsl.html.name" value="html.xsl"/>
 
   <property name="resume.home" value="/home/phenics/workspace/doc/resume"/>
 
