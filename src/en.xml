@@ -3,9 +3,9 @@
   <profile>
     <gender>Male</gender>
     <birthday>Jun. 2, 1983</birthday>
-    <telephone>15902198964</telephone>
+    <telephone>18658171108</telephone>
     <email>phenicsl@gmail.com</email>
-    <experience>1.5 years</experience>
+    <experience>2.5 years</experience>
   </profile>
   <academy>
     <duration>
@@ -26,8 +26,54 @@
   <history>
     <job>
       <duration>
-	<from>Aug. 2008</from>
+	<from>May. 2010</from>
 	<to>Present</to>
+      </duration>
+      <organization>Ask.com(Hangzhou)</organization>
+      <title>Software Engineer</title>
+      <projects>
+	<project>
+	  <name>
+	    Top Sites Crawling
+	  </name>
+	  <description>
+	    Worked on following task:
+	  </description>
+	  <taskset>
+	    <task>
+	      <title>Top Sites Crawling, URL Extraction and Coverage Improvement</title>
+	      <keywords>Perl, XSLT</keywords>
+	      <responsibility>
+		<item>Implemented site crawler to extract inner URLs for Top sites.</item>
+		<item>Analyzed crawled URLs, traced and improved site coverage.</item>
+		<item>Made presentation to team on the implementation of site crawler.</item>
+	      </responsibility>
+	    </task>
+	  </taskset>
+	</project>
+	<project>
+	  <name>Open Source Index &amp; Search Solution</name>
+	  <description>
+	    Study open source indexer and search engine implementation, deploy open source based indexer.Work on following task:
+	  </description>
+	  <taskset>
+	    <task>
+	      <title>Deploy Distributed Solr System</title>
+	      <keywords>Solr, HAProxy, Python</keywords>
+	      <responsibility>
+		<item>Implemented data convertion tool to convert original QnA format data into Solr input XML format.</item>
+		<item>Studied Solr, deployed Solr system that supports replication and shards.</item>
+		<item>Deployed HAProxy for load banlance.</item>
+	      </responsibility>
+	    </task>
+	  </taskset>
+	</project>
+      </projects>
+    </job>
+    <job>
+      <duration>
+	<from>Aug. 2008</from>
+	<to>May. 2010</to>
       </duration>
       <organization>EMC China R&amp;D center</organization>
       <title>Software Engineer</title>
@@ -75,7 +121,7 @@
 	      <keywords>C++, Boost, libusb, SCSI, SATA</keywords>
 	      <responsibility>
 		<item>
-		  Implement atomic tests for discovered devices. It involved
+		  Implemented atomic tests for discovered devices. It involved
 		  test logic implementation, physical device access and
 		  input/output operations.
 		</item>
@@ -100,16 +146,13 @@
 		  Worked as maintainer for Construction &amp; Builder sub system.
 		</item>
 		<item>
-		  Maintain and improve construction algorithm which involves XML
+		  Maintained and improved construction algorithm which involves XML
 		  file parsing(libxml++), expression parsing(Boost::Spirit) and
 		  complex match algorithm.
 		</item>
 		<item>
 		  Worked as git sub system maintainer for code quality and
 		  version control process assurance.
-		</item>
-		<item>
-		  Implemented logger library that supports difference categories and levels.
 		</item>
 	      </responsibility>
 	    </task>
@@ -130,7 +173,7 @@
 	<description>
 	  Key researcher in "Prophet" project, which focus on compiler
 	  and architecture technology for Thread-Level Speculation on multi-core
-	  processor. Worked in following tasks:
+	  processor. Worked on following tasks:
 	</description>
 	<taskset>
 	  <task>
@@ -152,7 +195,7 @@
 	    <keywords>compiler infrastructure, data flow analysis, thread partition algorithm</keywords>
 	    <responsibility>
 	      <item>
-		Design and implement thread partition algorithm to explore
+		Designed to improve thread partition algorithm to explore
 		thread-level parallel of natural loops.
 	      </item>
 	      <item>
@@ -170,13 +213,13 @@
     <skill>
       <title>Languages</title>
       <description>
-	C/C++, Java, Python, Bash, XML, HTML, Elisp
+	C/C++, Java, Python, Shell, XML, HTML
       </description>
     </skill>
     <skill>
       <title>Tools</title>
       <description>
-	GNU development tool set(GCC, Gmake, GDB), Emacs, Eclipse, Git, Mysql
+	GNU development tool set(GCC, Gmake, GDB), Emacs, Eclipse, Git, Mysql, Ant
       </description>
     </skill>
     <skill>
@@ -197,6 +240,9 @@
 	  knowledge.
 	</item>
 	<item>
+	  Familiar with search engine technology, distructed system development technology. Have experience on Lucene/Solr.
+	</item>
+	<item>
 	  Good knowledge about Object-oriented design, design pattern and UML.
 	</item>
 	<item>
@@ -209,9 +255,6 @@
 	<item>
 	  Some experiences with using Servlet, GWT, Spring and Hibernate. Have
 	  basic knowledge about dynamic web application development.
-	</item>
-	<item>
-	  Have experience with elisp programming for Emacs extension writting.
 	</item>
       </description>
     </skill>

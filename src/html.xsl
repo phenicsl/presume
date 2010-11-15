@@ -5,31 +5,50 @@
 	      doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
 	      encoding="utf-8"
 	      indent="no"/>    
+
+  <xsl:variable name="font" select="document('lang.xml')/lang/font"/>
+  <xsl:variable name="title" select="document('lang.xml')/lang/title"/>
+  <xsl:variable name="gender" select="document('lang.xml')/lang/gender"/>
+  <xsl:variable name="birthday" select="document('lang.xml')/lang/birthday"/>
+  <xsl:variable name="tel" select="document('lang.xml')/lang/tel"/>
+  <xsl:variable name="email" select="document('lang.xml')/lang/email"/>
+  <xsl:variable name="experience" select="document('lang.xml')/lang/experience"/>
+  <xsl:variable name="education" select="document('lang.xml')/lang/education"/>
+  <xsl:variable name="history" select="document('lang.xml')/lang/history"/>
+  <xsl:variable name="keywords" select="document('lang.xml')/lang/keywords"/>
+  <xsl:variable name="skills" select="document('lang.xml')/lang/skills"/>
+  <xsl:variable name="awards" select="document('lang.xml')/lang/awards"/>
+
+
   <xsl:template match="/">
     <html>
       <head>
-	<title>Li Zhong's Resume</title>
+	<title><xsl:value-of select="$title"/></title>
 	<style type="text/css">	  
 	  body {
-	      font-family: Verdana, Sans, Times;
-	      font-size: 10pt;
+	      font: 14.34px/20px arial, sans-serif;
+	      color: #333333;
+	      background-color: #FEFEFE;
 	  }
 	  
 	  div.page {
-	      width: 700pt;
-	      align: center;
+	      width: 960px;
 	  }
+
 	  *.label {
 	      font-style: italic;
 	      font-weight: bold;
 	  }
 	  
 	  div.head {
-	      border-left: 4pt solid rgb(42, 155, 201);
-	      padding-left: 2pt;	      
-	      padding-top: 2pt;	      
+	      border-left: 4px solid #CCCCCC;
+	      border-right: 4px solid #CCCCCC;
+	      background-color: #F9F9F9;
+	      padding: 4px 10px;
 	      font-size: 16pt;
 	      font-weight: bold;
+	      color: #222222;
+	      margin: 10px 0px;	      
 	  }
 	  
 	  div.section{
@@ -39,6 +58,7 @@
 	  div.content{
 	      margin-left: 5pt;
 	  }
+
 	  *.name {
 	      margin: 10pt 5pt;
 	      font-size: 18pt;	      
@@ -46,7 +66,7 @@
 	  }
 
 	  table.job-head {
-	      border-bottom: solid 1pt black;
+	      border-bottom: 1pt dashed #CCCCCC;
 	      font-size: 13pt;
 	      font-weight: bold;
 	  }
@@ -89,28 +109,28 @@
   </xsl:template>
 
   <xsl:template match="profile/gender">
-    <span class="label">Gender : </span><xsl:value-of select="."/><br />
+    <span class="label"><xsl:value-of select="$gender"/> : </span><xsl:value-of select="."/><br />
   </xsl:template>
 
   <xsl:template match="profile/birthday">
-    <span class="label">Birthday : </span><xsl:value-of select="."/><br />
+    <span class="label"><xsl:value-of select="$birthday"/> : </span><xsl:value-of select="."/><br />
   </xsl:template>
 
   <xsl:template match="profile/telephone">
-    <span class="label">Tel : </span><xsl:value-of select="."/><br />
+    <span class="label"><xsl:value-of select="$tel"/> : </span><xsl:value-of select="."/><br />
   </xsl:template>
 
   <xsl:template match="profile/email">
-    <span class="label">Email : </span><xsl:value-of select="."/><br />
+    <span class="label"><xsl:value-of select="$email"/> : </span><xsl:value-of select="."/><br />
   </xsl:template>
 
   <xsl:template match="profile/experience">
-    <span class="label">Experience : </span><xsl:value-of select="."/><br />
+    <span class="label"><xsl:value-of select="$experience"/> : </span><xsl:value-of select="."/><br />
   </xsl:template>
 
   <xsl:template match="academy">
     <div class="education section">
-      <div class="head">Education</div>
+      <div class="head"><xsl:value-of select="$education"/></div>
       <div class="content">
 	<table width="100%">
 	  <colgroup>
@@ -143,7 +163,7 @@
   <xsl:template match="history">
     <div class="section history">
       <div class="head">
-	Project History
+	<xsl:value-of select="$history"/>
       </div>
       <div class="content">
 	<xsl:for-each select="job">
@@ -234,7 +254,7 @@
   </xsl:template>
 
   <xsl:template match="keywords">
-    <span class="label">Keywords: </span><xsl:value-of select="."/>
+    <span class="label"><xsl:value-of select="$keywords"/> : </span><xsl:value-of select="."/>
   </xsl:template>
 
   <xsl:template match="task/responsibility">
@@ -249,7 +269,7 @@
 
   <xsl:template match="skillset">
     <div class="skills section">
-      <div class="head">Skills</div>
+      <div class="head"><xsl:value-of select="$skills"/></div>
       <div class="content">
 	<xsl:for-each select="skill">
 	  <xsl:call-template name="skill"/>
@@ -285,7 +305,7 @@
   <xsl:template match="awards">
     <div class="awards">
       <div class="head">
-	Awards
+	<xsl:value-of select="$awards"/>
       </div>
       <div class="content">	
 	<table width="100%">

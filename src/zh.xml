@@ -1,0 +1,257 @@
+<resume>
+  <name>李钟</name>
+  <profile>
+    <gender>男</gender>
+    <birthday>1983-06-02</birthday>
+    <telephone>18658171108</telephone>
+    <email>phenicsl@gmail.com</email>
+    <experience>2.5年</experience>
+  </profile>
+  <academy>
+    <duration>
+      <from>2005</from>
+      <to>2008</to>
+      <degree>硕士</degree>
+      <major>系统结构</major>
+      <school>西安交通大学</school>
+    </duration>
+    <duration>
+      <from>2001</from>
+      <to>2005</to>
+      <degree>学士</degree>
+      <major>计算机科学与技术</major>
+      <school>西安交通大学</school>
+    </duration>
+  </academy>
+  <history>
+    <job>
+      <duration>
+	<from>2010年6月</from>
+	<to>现在</to>
+      </duration>
+      <organization>恩杰软件科技有限公司</organization>
+      <title>软件工程师</title>
+      <projects>
+	<project>
+	  <name>Top站点URL提取</name>
+	  <description>
+	    负责如下的工作：
+	  </description>
+	  <taskset>
+	    <task>
+	      <title>
+		Top站点网页抓取，分析并提取内部URL，结果分析以提高URL提取覆盖率。
+	      </title>
+	      <keywords>Perl, XSLT</keywords>
+	      <responsibility>
+		<item>实现针对单个网站的爬虫程序，抓取站点网页，分析并提取内部URL。</item>
+		<item>分析抓取结果并提高爬虫的抓取覆盖率。</item>
+		<item>总结并分析爬虫程序实现，并在组内进行讲解和演示。</item>
+	      </responsibility>
+	    </task>
+	  </taskset>
+	</project>
+	<project>
+	  <name>基于开源技术的Indexer实现</name>
+	  <description>
+	    学习开源搜索引擎技术，探索并部署基于开源技术的Indexer系统。负责以下的工作：
+	  </description>
+	  <taskset>
+	    <task>
+	      <title>部署分布式的Solr系统</title>
+	      <keywords>
+		Solr, HAProxy, Python
+	      </keywords>
+	      <responsibility>
+		<item>
+		  实现数据转换脚本，将原有的Q/A格式数据转换为Solr的XML输入格式。
+		</item>
+		<item>
+		  学习Solr，部署支持Replication和Shard的Solr系统。
+		</item>
+		<item>
+		  使用HAProxy实现Solr系统的负载均衡。
+		</item>
+	      </responsibility>
+	    </task>
+	  </taskset>
+	</project>
+      </projects>
+    </job>
+    <job>
+      <duration>
+	<from>2008年8月</from>
+	<to>2010年5月</to>
+      </duration>
+      <organization>EMC中国研发中心</organization>
+      <title>软件工程师</title>
+      <projects>
+	<project>
+	  <name>
+	    Platypus 硬件诊程序
+	  </name>
+	  <description>
+	    Platypus的最初开发成员。致力于开发EMC公司的下一代存储系统诊断程序。负责以下领域的工作：
+	  </description>
+	  <taskset>
+	    <task>
+	      <title>
+		Zeroconf服务发现和文件传输实现
+	      </title>	     
+	      <keywords>
+		C, pthread, Zeroconf协议, 异步程序设计, Linux Socket, 正则表达式
+	      </keywords>
+	      <responsibility>
+		<item>
+		  负责学习研究Zeroconf协议并向整个项目组介绍其实现机制。设计Platypus
+		  项目使用的Zeroconf服务注册和发现协议。
+		</item>
+		<item>
+		  实现基于Zeroconf的服务发布/发现模块。
+		</item>
+		<item>		  
+		  基于Linux Socket实现Client/Server文件传输协议。
+		</item>
+		<item>
+		  使用正则表达式解析文件传输命令和响应。
+		</item>
+		<item>
+		  改进libavahi程序库，使用pthread实现Zeroconf服务注册和发现。
+		</item>
+	      </responsibility>
+	    </task>
+	    <task>
+	      <title>硬件测试实现</title> 
+	      <keywords>C++, Boost, libusb, SCSI, SATA</keywords>
+	      <responsibility>
+		<item>
+		  实现硬件设备测试，包括测试逻辑实现，物理设备访问和输入输出操作。
+		</item>
+		<item>
+		  研究USB Mass Storage和SCSI协议，实现read/write操作。实现SATA设备测试，包括read/write, display S.M.A.R.T, identify等操作。
+		</item>
+	      </responsibility>
+	    </task>
+	    <task>
+	      <title>Construction Algorithm &amp; Builder</title>
+	      <keywords>C/C++, Boost::Spirit, libxml++</keywords>
+	      <responsibility>
+		<item>
+		  负责开发和维护进行逻辑设备构造的Construction &amp; Builder 模块。负责模块的Git源码库和代码的质量管理。
+		</item>
+		<item>
+		  维护并改进Construciton Algorithm, 包括XML文件解析(libxml++), 表达式分析(Boost::Spirit)和设备匹配算法。
+		</item>
+	      </responsibility>
+	    </task>
+	  </taskset>
+	</project>
+      </projects>
+    </job>
+    <job>
+      <duration>
+	<from>2006年5月</from>
+	<to>2008年7月</to>
+      </duration>
+      <organization>国家高性能计算中心</organization>
+      <title>硕士研究生</title>
+      <projects>
+	<project>
+	  <name>Prophet推测多线程(SpMT)技术研究和实现</name>
+	  <description>
+	    "Prophet"项目主要研究人员。致力于线程级推测执行和多核处理器相关的编译和体系结构技术研究。主要工作如下:
+	  </description>
+	  <taskset>
+	    <task>
+	      <title>基于Suif中间表达式的推测多线程体系结构虚拟机</title>
+	      <keywords>SpMT体系结构, 虚拟机技术, 指令解释器</keywords>
+	      <responsibility>
+		<item> 
+		  设计推测执行模型和SpMT体系结构，设计新的Cache系统解决推测执行的依赖冲突问题。
+		</item>
+		<item> 
+		  实现SpMT虚拟机以解释执行中间表达式的方式模拟SpMT体系结构。
+		</item>
+	      </responsibility>
+	    </task>	  
+	    <task>
+	    <title>线程划分技术研究</title>
+	    <keywords>编译器技术, 数据流分析, 线程划分技术</keywords>
+	    <responsibility>
+	      <item>
+		改进并实现线程划分算法来开发程序的线程级并行性。
+	      </item>
+	      <item>
+		基于SUIF编程框架的数据流分析编程。
+	      </item>
+	    </responsibility>
+	    </task>
+	  </taskset>
+	</project>
+      </projects>
+    </job>
+  </history>
+  
+  <skillset>
+    <skill>
+      <title>计算机语言</title>
+      <description>
+	C/C++, Java, Python, shell, XML, HTML
+      </description>
+    </skill>
+    <skill>
+      <title>工具</title>
+      <description>
+	GNU开发工具链(GCC, Gmake, GDB), Emacs, Git, Mysql, Ant
+      </description>
+    </skill>
+    <skill>
+      <title>
+	技能
+      </title>
+      <description>
+	<item>
+	  熟悉C/C++, 掌握Java, Python
+	</item>
+	<item>
+	  深入理解编译器技术，了解解析器和解释器实现。
+	</item>
+	<item>
+	  掌握Linux系统工具，熟悉Shell脚本编程。具有pthread多线程编程经验。
+	</item>
+	<item>
+	  了解搜索引擎实现技术, 分布式系统开发技术；了解Lucene/Solr开源搜索引擎。
+	</item>
+	<item>
+	  理解掌握面向对象设计，设计模式和UML。
+	</item>
+	<item>
+	  掌握Linux Socket开发技术，熟悉TCP/IP网络协议。
+	</item>	
+	<item>
+	  熟悉HTML, XML, XSLT, XSL-FO等标记语言和工具。了解CSS和Javascript。
+	</item>
+	<item>
+	  具有使用Servlet, GWT, Spring和Hibernate的经验，具有动态web程序编程的基本知识。
+	</item>
+      </description>
+    </skill>
+    <skill>
+      <title>英语</title>
+      <description>
+	有良好的阅读和写作能力，能够较好的进行英文交流。
+      </description>
+    </skill>
+  </skillset>
+
+  <awards>
+    <award>
+      <time>
+	<year>2009</year>
+      </time>
+      <description>
+	EMC研发中心 "Bronze Medal of Recognition"
+      </description>
+    </award>
+  </awards>
+</resume>

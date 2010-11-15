@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lang>
+    <font>Times</font>
+    <title>Li Zhong's Resume</title>
+    <gender>Gender</gender>
+    <birthday>Birthday</birthday>
+    <tel>Tel</tel>
+    <email>Email</email>
+    <experience>Experience</experience>      
+    <education>Education</education>
+    <history>Project History</history>
+    <keywords>Keywords</keywords>
+    <skills>Skills</skills>    
+    <awards>Awards</awards>
+    <responsibilities>responsibilities</responsibilities>
+</lang>

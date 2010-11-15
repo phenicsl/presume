@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lang>
+    <font>SimSun</font>
+    <title>李钟</title>
+    <gender>性别</gender>
+    <birthday>出生日期</birthday>
+    <tel>电话</tel>
+    <email>电子邮件</email>
+    <experience>工作经验</experience>      
+    <education>教育背景</education>
+    <history>项目经验</history>
+    <keywords>关键字</keywords>
+    <skills>技能</skills>    
+    <responsibilities>所负责工作内容</responsibilities>
+    <awards>奖励</awards>
+</lang>

@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 		xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+  <xsl:variable name="font" select="document('lang.xml')/lang/font"/>
+  <xsl:variable name="title" select="document('lang.xml')/lang/title"/>
+  <xsl:variable name="gender" select="document('lang.xml')/lang/gender"/>
+  <xsl:variable name="birthday" select="document('lang.xml')/lang/birthday"/>
+  <xsl:variable name="tel" select="document('lang.xml')/lang/tel"/>
+  <xsl:variable name="email" select="document('lang.xml')/lang/email"/>
+  <xsl:variable name="experience" select="document('lang.xml')/lang/experience"/>
+  <xsl:variable name="education" select="document('lang.xml')/lang/education"/>
+  <xsl:variable name="history" select="document('lang.xml')/lang/history"/>
+  <xsl:variable name="keywords" select="document('lang.xml')/lang/keywords"/>
+  <xsl:variable name="skills" select="document('lang.xml')/lang/skills"/>
+  <xsl:variable name="awards" select="document('lang.xml')/lang/awards"/>
+  <xsl:variable name="responsibilities" select="document('lang.xml')/lang/responsibilities"/>
+
   <xsl:template match="/">
     <fo:root>
       <fo:layout-master-set>
-	<fo:simple-page-master master-name="A4" 
+	<fo:simple-page-master master-name="A4"
 			       page-height="297mm"
 			       page-width="210mm"
 			       margin-top="10mm"
@@ -37,19 +52,22 @@
     <xsl:param name="title"/>
     <fo:block font-weight="bold"
 	      font-size="12pt"
-	      border-left="4pt solid rgb(42, 155, 201)"
-	      padding-top="2pt"
-	      padding-left="2pt"
-	      margin-top="5pt"
-	      margin-bottom="2pt"
+	      border-left="4pt solid #CCCCCC"
+	      border-right="4pt solid #CCCCCC"
+	      background-color="#FAFAFA"
+	      padding-top="4px"
+	      padding-left="10px"
+	      padding-bottom="2px"
+	      margin-top="5px"
+	      margin-bottom="5px"
 	      margin-left="1pt">      
       <xsl:value-of select="$title"/>
     </fo:block>
-  </xsl:template>
+  </xsl:template>  
 
   <!-- output the name part -->
   <xsl:template match="name">
-    <fo:block font-family="Times"
+    <fo:block font-family="{$font}"
 	      font-weight="bold"
 	      font-size="14pt"
 	      margin-bottom="2mm">
@@ -59,41 +77,41 @@
 
   <xsl:template match="profile">
     <fo:block font-size="10pt"
-	      font-family="Times">
+	      font-family="{$font}">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
   
   <xsl:template match="profile/gender">
     <fo:block>
-      <fo:inline font-weight="bold" font-style="italic">Gender : </fo:inline>
+      <fo:inline font-weight="bold" font-style="normal"><xsl:value-of select="$gender"/> : </fo:inline>
       <fo:inline><xsl:value-of select="."/></fo:inline>
     </fo:block>
   </xsl:template>
   
   <xsl:template match="profile/birthday">
     <fo:block>
-      <fo:inline font-weight="bold" font-style="italic">Birthday : </fo:inline>
+      <fo:inline font-weight="bold" font-style="italic"><xsl:value-of select="$birthday"/> : </fo:inline>
       <fo:inline><xsl:value-of select="."/></fo:inline>
     </fo:block>
   </xsl:template>
   <xsl:template match="profile/telephone">
     <fo:block>
-      <fo:inline font-weight="bold" font-style="italic">Tel : </fo:inline>
+      <fo:inline font-weight="bold" font-style="italic"><xsl:value-of select="$tel"/> : </fo:inline>
       <fo:inline><xsl:value-of select="."/></fo:inline>
     </fo:block>    
   </xsl:template>
   
   <xsl:template match="profile/email">
     <fo:block>
-      <fo:inline font-weight="bold" font-style="italic">Email : </fo:inline>
+      <fo:inline font-weight="bold" font-style="italic"><xsl:value-of select="$email"/> : </fo:inline>
       <fo:inline><xsl:value-of select="."/></fo:inline>
     </fo:block>    
   </xsl:template>
   
   <xsl:template match="profile/experience">
     <fo:block>
-      <fo:inline font-weight="bold" font-style="italic">Work Experience:</fo:inline>
+      <fo:inline font-weight="bold" font-style="italic"><xsl:value-of select="$experience"/> : </fo:inline>
       <fo:inline><xsl:value-of select="."/></fo:inline>
     </fo:block>
   </xsl:template>
@@ -102,11 +120,11 @@
       Academies will be formated as a table with three columns.      
   -->
   <xsl:template match="academy">
-    <fo:block font-family="Times"
+    <fo:block font-family="{$font}"
 	      font-size="10pt">
       <xsl:call-template name="head">
 	<xsl:with-param name="title">
-	  <xsl:text>Education Background</xsl:text>
+	  <xsl:value-of select="$education"/>
 	</xsl:with-param>
       </xsl:call-template>
       <fo:block margin-left="3pt">
@@ -152,11 +170,11 @@
   </xsl:template>
 
   <xsl:template match="history">
-    <fo:block font-family="Times"
+    <fo:block font-family="{$font}"
 	      font-size="10pt">
       <xsl:call-template name="head">
 	<xsl:with-param name="title">
-	  <xsl:text>Project History</xsl:text>
+	  <xsl:value-of select="$history"/>
 	</xsl:with-param>
       </xsl:call-template>
       <fo:block margin-left="3pt">
@@ -177,10 +195,10 @@
 	      font-weight="bold"
 	      font-size="11pt">
       <fo:table width="100%" table-layout="fixed"
-		border-bottom="0.5pt solid black">
+		border-bottom="1px dashed #CCCCCC">
+	<fo:table-column column-width="30%"/>
 	<fo:table-column column-width="25%"/>
-	<fo:table-column column-width="25%"/>
-	<fo:table-column column-width="50%"/>
+	<fo:table-column column-width="45%"/>
 	<fo:table-body>
 	  <fo:table-row>
 	    <fo:table-cell text-align="left">
@@ -234,9 +252,13 @@
     <fo:list-block margin-top="2mm"
 		   start-indent="2mm">
       <xsl:for-each select="project">
-	<fo:list-item>
+	<fo:list-item margin-bottom="2mm">
 	  <fo:list-item-label>
-	    <fo:block>&#x2666;</fo:block>
+	    <fo:block>
+	      <fo:external-graphic src="url('imgs/project.svg')"
+				   content-height="1em"
+				   content-width="1em"/>
+	    </fo:block>
 	  </fo:list-item-label>
 	  <fo:list-item-body start-indent="6mm">
 	    <xsl:call-template name="project"/>
@@ -283,13 +305,13 @@
 
   <xsl:template match="keywords">
     <fo:block>
-      <fo:inline font-weight="bold" font-style="italic">Keywords: </fo:inline>
+      <fo:inline font-weight="bold" font-style="italic"><xsl:value-of select="$keywords"/> : </fo:inline>
       <fo:inline><xsl:value-of select="."/></fo:inline>
     </fo:block>
   </xsl:template>
 
   <xsl:template match="task/responsibility">
-    <fo:block font-weight="bold" font-style="italic">Responsibilities: </fo:block>
+    <fo:block font-weight="bold" font-style="italic"><xsl:value-of select="$responsibilities"/> : </fo:block>
     <fo:list-block provisional-distance-between-starts="3mm" 
 		   start-indent="12mm">
       <xsl:for-each select="item">
@@ -308,7 +330,7 @@
   </xsl:template>
 
   <xsl:template match="skillset">
-    <fo:block font-family="Times"
+    <fo:block font-family="{$font}"
 	      font-size="10pt">
       <xsl:call-template name="head">
 	<xsl:with-param name="title">
@@ -360,11 +382,11 @@
   </xsl:template>
 
   <xsl:template match="awards">
-    <fo:block font-family="Times"
+    <fo:block font-family="{$font}"
 	      font-size="10pt">
       <xsl:call-template name="head">
 	<xsl:with-param name="title">
-	  <xsl:text>Awards</xsl:text>
+	  <xsl:value-of select="$awards"/>
 	</xsl:with-param>
       </xsl:call-template>      
       <fo:table width="100%"

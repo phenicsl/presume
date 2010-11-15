@@ -13,14 +13,22 @@
   <property name="font.name" value=""/>
   <property name="metrics.name" value=""/>
   
-  <property name="xml.name" value="resume.xml"/>
-  <property name="fo.name" value="resume.fo"/>
-  <property name="pdf.name" value="resume.pdf"/>
-  <property name="html.name" value="resume.html"/>
+  <property name="basename" value="en"/>
+  <property name="xml.name" value="${basename}.xml"/>
+  <property name="fo.name" value="${basename}.fo"/>
+  <property name="pdf.name" value="${basename}.pdf"/>
+  <property name="html.name" value="${basename}.html"/>
   <property name="xsl.fo.name" value="fo.xsl"/>
   <property name="xsl.html.name" value="html.xsl"/>
 
-  <property name="resume.home" value="/home/phenics/workspace/doc/resume"/>
+  <property name="ttcname" value=""/>
+  <property name="locale.en.name" value="${src.path}/lang_en.xml"/>
+  <property name="locale.zh.name" value="${src.path}/lang_zh.xml"/>
+
+  <property name="locale" value="en"/>
+
+  <property name="resume.home" value="/home/lizh/workspace/presume"/>
+
 
   <fileset dir="${fop.home}" id="fop.libs">
     <include name="lib/*.jar"/>
@@ -30,6 +38,12 @@
   <path id="fop.classpath">
     <fileset refid="fop.libs"/>
   </path>
+
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+
+  <target name="mkdstdir" description="make the build directory">
+    <mkdir dir="${dst.path}"/>
+  </target>
 
   <target name="ttf-metrics" description="generate font config files">
     <mkdir dir="${metrics.path}"/>
@@ -41,6 +55,18 @@
       <arg value="${metrics.path}/${metrics.name}" />
     </java>
   </target>
+
+  <target name="ttc-metrics" description="generate font config files">
+    <mkdir dir="${metrics.path}"/>
+    <java classname="org.apache.fop.fonts.apps.TTFReader">
+      <classpath>
+	<path refid="fop.classpath"/>
+      </classpath>
+      <arg line="-ttcname '${ttcname}'"/>
+      <arg value="${font.path}/${font.name}" />
+      <arg value="${metrics.path}/${metrics.name}" />
+    </java>
+  </target>
   
   <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop">
     <classpath>
@@ -48,7 +74,21 @@
     </classpath>
   </taskdef>
 
-  <target name="xslt_fo" description="generate fo with xslt process">
+  <target name="build-locale" description="build the appropriate locale file">
+    <!-- delete exist src/lang.xml file -->
+    <delete file="${src.path}/lang.xml"/>
+    <if>
+      <equals arg1="${locale}" arg2="zh"/>
+      <then>
+	<copy file="${locale.zh.name}" tofile="${src.path}/lang.xml"/>
+      </then>
+      <else>
+	<copy file="${locale.en.name}" tofile="${src.path}/lang.xml"/>
+      </else>
+    </if>
+  </target>
+
+  <target name="xslt_fo" depends="build-locale" description="generate fo with xslt process">
     <java classname="org.apache.xalan.xslt.Process">
       <classpath>
 	<path refid="fop.classpath"/>
@@ -57,7 +97,7 @@
     </java>
   </target>
 
-  <target name="fop" depends="xslt_fo" description="build the document">
+  <target name="fop" depends="xslt_fo, mkdstdir" description="build the document">
     <fop format="application/pdf"
 	 fofile="${src.path}/${fo.name}"
 	 outfile="${dst.path}/${pdf.name}"
@@ -65,7 +105,7 @@
     </fop>
   </target>
 
-  <target name="html" description="build html version">
+  <target name="html" depends="mkdstdir, build-locale" description="build html version">
     <java classname="org.apache.xalan.xslt.Process">
       <classpath>
 	<path refid="fop.classpath"/>
@@ -79,5 +119,9 @@
 	  spawn="true">
       <arg value="${dst.path}/${pdf.name}"/>
     </exec>
+  </target>
+
+  <target name="clean" description="clean project">
+    <delete dir="build"/>
   </target>
 </project>
