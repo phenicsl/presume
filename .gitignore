@@ -2,4 +2,6 @@
 conf/*
 build/*
 info/*
-src/resume.fo
+src/*.fo
+resumes
+.*
