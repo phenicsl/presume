@@ -224,7 +224,7 @@
     </skill>
     <skill>
       <title>
-	Technology Skills
+	Technical Skills
       </title>
       <description>
 	<item>
@@ -238,6 +238,9 @@
 	  Solid knowledge on Linux system usage. Familiar with Bash script
 	  programming. Advanced Pthread and multi-threading programming
 	  knowledge.
+	</item>
+	<item>
+	  Solid knowledge on data structure and algorithm design.
 	</item>
 	<item>
 	  Familiar with search engine technology, distructed system development technology. Have experience on Lucene/Solr.

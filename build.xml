@@ -17,6 +17,7 @@
   <property name="xml.name" value="${basename}.xml"/>
   <property name="fo.name" value="${basename}.fo"/>
   <property name="pdf.name" value="${basename}.pdf"/>
+  <property name="rtf.name" value="${basename}.rtf"/>
   <property name="html.name" value="${basename}.html"/>
   <property name="xsl.fo.name" value="fo.xsl"/>
   <property name="xsl.html.name" value="html.xsl"/>
@@ -105,6 +106,14 @@
     </fop>
   </target>
 
+  <target name="rtf" depends="xslt_fo, mkdstdir" description="build the document">
+    <fop format="application/rtf"
+	 fofile="${src.path}/${fo.name}"
+	 outfile="${dst.path}/${rtf.name}"
+	 userconfig="conf/fop.xconf">
+    </fop>
+  </target>
+
   <target name="html" depends="mkdstdir, build-locale" description="build html version">
     <java classname="org.apache.xalan.xslt.Process">
       <classpath>
@@ -113,6 +122,9 @@
       <arg line="-IN ${src.path}/${xml.name} -XSL ${src.path}/${xsl.html.name} -OUT ${dst.path}/${html.name}"/>
     </java>
   </target>
+
+
+
 
   <target name="view" description="view pdf file">
     <exec executable="evince"

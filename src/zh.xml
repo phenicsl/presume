@@ -52,7 +52,7 @@
 	  </taskset>
 	</project>
 	<project>
-	  <name>基于开源技术的Indexer实现</name>
+	  <name>基于开源技术的Indexer</name>
 	  <description>
 	    学习开源搜索引擎技术，探索并部署基于开源技术的Indexer系统。负责以下的工作：
 	  </description>
@@ -88,7 +88,7 @@
       <projects>
 	<project>
 	  <name>
-	    Platypus 硬件诊程序
+	    Platypus 硬件诊断程序
 	  </name>
 	  <description>
 	    Platypus的最初开发成员。致力于开发EMC公司的下一代存储系统诊断程序。负责以下领域的工作：
@@ -218,6 +218,9 @@
 	</item>
 	<item>
 	  掌握Linux系统工具，熟悉Shell脚本编程。具有pthread多线程编程经验。
+	</item>
+	<item>
+	  深入理解数据结构及算法设计。
 	</item>
 	<item>
 	  了解搜索引擎实现技术, 分布式系统开发技术；了解Lucene/Solr开源搜索引擎。

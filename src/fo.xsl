@@ -52,13 +52,14 @@
     <xsl:param name="title"/>
     <fo:block font-weight="bold"
 	      font-size="12pt"
-	      border-left="4pt solid #CCCCCC"
-	      border-right="4pt solid #CCCCCC"
-	      background-color="#FAFAFA"
-	      padding-top="4px"
+	      border-left="2pt solid #CCCCCC"
+	      border-right="2pt solid #CCCCCC"	      
+	      border-top="1px dashed #CCCCCC"
+	      border-bottom="1px dashed #CCCCCC"
+	      padding-top="2px"
 	      padding-left="10px"
-	      padding-bottom="2px"
-	      margin-top="5px"
+	      padding-bottom="1px"
+	      margin-top="15px"
 	      margin-bottom="5px"
 	      margin-left="1pt">      
       <xsl:value-of select="$title"/>
@@ -334,7 +335,7 @@
 	      font-size="10pt">
       <xsl:call-template name="head">
 	<xsl:with-param name="title">
-	  <xsl:text>Skills</xsl:text>
+	  <xsl:value-of select="$skills"/>
 	</xsl:with-param>
       </xsl:call-template>
       <fo:block margin-left="4pt">
@@ -366,7 +367,7 @@
 	      <fo:list-item-label>
 		<fo:block> - </fo:block>
 	      </fo:list-item-label>
-	      <fo:list-item-body start-indent="6mm">
+	      <fo:list-item-body start-indent="7mm">
 		<fo:block>
 		  <xsl:value-of select="."/>
 		</fo:block>
